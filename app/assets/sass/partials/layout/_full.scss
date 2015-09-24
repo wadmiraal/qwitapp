@@ -3,7 +3,31 @@
  * Layout styles.
  */
 
-.app {
+.app__header {
+  max-width: 400px;
+  margin: 0 auto;
+
+  h1 {
+    text-align: center;
+  }
+}
+
+.app__header__button-row {
+  overflow: hidden;
+}
+
+.app__header__button-row__button {
+  float: left;
+  width: 46%;
+  margin: 2%;
+
   text-align: center;
 }
 
+.app__header__button-row__button__image {
+  max-width: 100%;
+}
+
+.app__header__button-row__button__label {
+
+}

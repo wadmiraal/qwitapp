@@ -33,7 +33,7 @@ gulp.task( 'css-min', function() {
 
 // Watch files for changes.
 gulp.task( 'watch', function() {
-  gulp.watch( [ './app/assets/sass/*.scss', './app/assets/sass/**/*.scss'], [ 'sass', 'css-min' ]);
+  gulp.watch( [ './app/assets/sass/*.scss', './app/assets/sass/**/*.scss' ], [ 'sass' ] );
 });
 
 
