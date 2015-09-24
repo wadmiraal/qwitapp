@@ -8,10 +8,15 @@
     "app": "app"
   },
   "dependencies": {
-    "node-sass": "^3.3.3",
     "gulp": "^3.9.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp-minify-css": "~0.3.11",
+    "gulp-concat": "~2.4.1",
+    "gulp-minify-html": "~0.1.8",
+    "gulp-uglify": "~1.0.1",
+    "gulp-sass": "~2.0.4"
+  },
   "scripts": {
     "test": "testem"
   },
