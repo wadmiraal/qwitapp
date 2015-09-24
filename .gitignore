@@ -1,3 +1,4 @@
 /app/assets/components/
+/app/assets/css/
 /node_modules/
 *.sublime*
