@@ -3,9 +3,12 @@
  * Layout styles.
  */
 
-.app__header {
+.app {
   max-width: 400px;
   margin: 0 auto;
+}
+
+.app__header {
 
   h1 {
     text-align: center;
@@ -22,6 +25,8 @@
   margin: 2%;
 
   text-align: center;
+
+  cursor: pointer;
 }
 
 .app__header__button-row__button__image {
@@ -30,4 +35,34 @@
 
 .app__header__button-row__button__label {
 
+}
+
+.app__body__list {
+  text-align: center;
+}
+
+.app__body__statistics {
+  font-weight: bold;
+
+  overflow: hidden;
+
+  h3 {
+    text-align: center;
+  }
+
+  dt {
+    float: left;
+    clear: left;
+    margin-bottom: .5em;
+  }
+
+  dd {
+    float: left;
+    margin-left: .5em;
+    margin-bottom: .5em;
+  }
+}
+
+.app__body__list {
+  margin-top: 2em;
 }
