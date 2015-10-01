@@ -11,14 +11,16 @@ define( 'app/app', [
     'app/router/router',
     'app/model/day',
     'app/collection/days',
-    'app/view/list'
-], function( Backbone, Router, DayModel, DayCollection, ListView ) {
+    'app/view/list',
+    'app/view/stats'
+], function( Backbone, Router, DayModel, DayCollection, ListView, StatsView ) {
     'use strict';
 
     return {
         initialize: function() {
             var router = new Router(),
                 listWrapper = $( '#list' ),
+                statsWrapper = $( '#stats' ),
                 days = new DayCollection();
             
             days.fetch();
@@ -27,11 +29,15 @@ define( 'app/app', [
                 var listView = new ListView({ collection: days });
                 listView.render();
                 listWrapper.html( listView.$el );
+
+                var statsView = new StatsView({ collection: days });
+                statsView.render();
+                statsWrapper.html( statsView.$el );
             });
 
             router.on( 'route:day-add', function( good ) {
                 days.create({ good: !! parseInt( good ), date: '1' });
-                router.navigate( 'home', true );
+                router.navigate( '', true );
             });
 
             router.on( 'route:day', function( id ) {
