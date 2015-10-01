@@ -1,6 +1,6 @@
 /**
  * @file
- * Book model specs.
+ * Day model specs.
  *
  * @author Wouter Admiraal <wad@wadmiraal.net>
  * @license MIT
