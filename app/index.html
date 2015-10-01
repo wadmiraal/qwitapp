@@ -20,21 +20,21 @@
             <h1 id="app-title">So, how did you do today?</h1>
 
             <div class="app__header__button-row">
-                <div id="success-button" class="app__header__button-row__button button">
+                <a href="#new-day/1" id="success-button" class="app__header__button-row__button button">
                     <img class="app__header__button-row__button__image button__image" src="assets/images/big-smilie.png" />
 
-                    <h3 class="app__header__button-row__button__label button__label">
+                    <span class="app__header__button-row__button__label button__label">
                         I did great!
-                    </h3>
-                </div>
+                    </span>
+                </a>
 
-                <div id="failure-button" class="app__header__button-row__button button">
+                <a href="#new-day/0" id="failure-button" class="app__header__button-row__button button">
                     <img class="app__header__button-row__button__image button__image" src="assets/images/big-sad.png" />
 
-                    <h3 class="app__header__button-row__button__label button__label">
+                    <span class="app__header__button-row__button__label button__label">
                         I had a bad day...
-                    </h3>
-                </div>
+                    </span>
+                </a>
             </div>
         </div>
 
@@ -60,10 +60,13 @@
         </dl>
     </script>
 
-    <script type="text/template" id="list-tpl">
+    <script type="text/template" id="day-tpl">
         <span class="app__body__list__day day">
-            <img class="app__body__list__day__image day__image" src="assets/images/small-<% if ( good ) { %>smilie<% } else { %>sad<% } %>.png" />
-       </span>
+            <img
+                class="app__body__list__day__image day__image"
+                src="assets/images/small-<% if ( good ) { %>smilie<% } else { %>sad<% } %>.png"
+                title="<% if ( good ) { %>Good job!<% } else { %>It happens.<% } %>" />
+        </span>
     </script>
 
     <script data-main="assets/js/main" src="assets/components/requirejs/require.js"></script>
