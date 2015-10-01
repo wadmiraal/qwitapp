@@ -11,7 +11,7 @@ require.config({
     baseUrl: 'assets/',
     urlArgs: 'v=1.0.0' + Math.random(),
     paths: {
-        jquery: 'components/jquery/jquery',
+        jquery: 'components/jquery/dist/jquery',
         underscore: 'components/underscore/underscore',
         backbone: 'components/backbone/backbone',
         app: 'js/',
