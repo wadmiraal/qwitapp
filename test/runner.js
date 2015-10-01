@@ -13,13 +13,13 @@ require.config({
     baseUrl: '../app/assets/',
     urlArgs: 'random=' + Math.random(),
     paths: {
-        jquery: 'components/jquery/jquery',
+        jquery: 'components/jquery/dist/jquery',
         underscore: 'components/underscore/underscore',
         backbone: 'components/backbone/backbone',
-	jasmine: 'components/jasmine/lib/jasmine-core/jasmine',
-	'jasmine-html': 'components/jasmine/lib/jasmine-core/jasmine-html',
-	'jasmine-boot': 'components/jasmine/lib/jasmine-core/boot',
-	testem: '/testem',
+        jasmine: 'components/jasmine/lib/jasmine-core/jasmine',
+        'jasmine-html': 'components/jasmine/lib/jasmine-core/jasmine-html',
+        'jasmine-boot': 'components/jasmine/lib/jasmine-core/boot',
+        testem: '/testem',
         app: 'js',
         spec: '../../test/specs/'
     },
@@ -31,15 +31,15 @@ require.config({
             deps: [ 'underscore', 'jquery' ],
             exports: 'Backbone'
         },
-	'jasmine-html': {
+        'jasmine-html': {
             deps: [ 'jasmine' ]
-	},
-	'jasmine-boot': {
+        },
+        'jasmine-boot': {
             deps: [ 'jasmine', 'jasmine-html' ]
-	},
-	testem: {
+        },
+        testem: {
             deps: [ 'jasmine-boot' ]
-	}
+        }
     }
 });
 
@@ -54,7 +54,6 @@ require([ 'testem' ], function() {
     ];
 
     require( specs, function() {
-	window.onload();
+       window.onload();
     });
 });
-
