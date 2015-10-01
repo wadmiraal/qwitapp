@@ -20,13 +20,13 @@
 }
 
 .app__header__button-row__button {
+  display: block;
   float: left;
   width: 46%;
   margin: 2%;
 
   text-align: center;
-
-  cursor: pointer;
+  text-decoration: none;
 }
 
 .app__header__button-row__button__image {
@@ -34,7 +34,10 @@
 }
 
 .app__header__button-row__button__label {
+  display: block;
 
+  font-family: $font-stack;
+  font-size: 1.2em;
 }
 
 .app__body__list {
