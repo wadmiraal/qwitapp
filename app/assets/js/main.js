@@ -14,6 +14,7 @@ require.config({
         jquery: 'components/jquery/dist/jquery',
         underscore: 'components/underscore/underscore',
         backbone: 'components/backbone/backbone',
+        localstorage: 'components/backbone.localStorage/backbone.localStorage',
         app: 'js/',
     },
     shim: {
@@ -23,6 +24,9 @@ require.config({
         backbone: {
             deps: [ 'underscore', 'jquery' ],
             exports: 'Backbone'
+        },
+        localstorage: {
+            deps: [ 'backbone' ]
         }
     }
 });

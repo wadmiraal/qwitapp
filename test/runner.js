@@ -16,6 +16,7 @@ require.config({
         jquery: 'components/jquery/dist/jquery',
         underscore: 'components/underscore/underscore',
         backbone: 'components/backbone/backbone',
+        localstorage: 'components/backbone.localStorage/backbone.localStorage',
         jasmine: 'components/jasmine/lib/jasmine-core/jasmine',
         'jasmine-html': 'components/jasmine/lib/jasmine-core/jasmine-html',
         'jasmine-boot': 'components/jasmine/lib/jasmine-core/boot',
@@ -30,6 +31,9 @@ require.config({
         backbone: {
             deps: [ 'underscore', 'jquery' ],
             exports: 'Backbone'
+        },
+        localstorage: {
+            deps: [ 'backbone' ]
         },
         'jasmine-html': {
             deps: [ 'jasmine' ]
@@ -50,7 +54,8 @@ require([ 'testem' ], function() {
     jasmineEnv.updateInterval = 1000;
 
     var specs = [
-        'spec/model/day'
+        'spec/model/day',
+        'spec/collection/days'
     ];
 
     require( specs, function() {
