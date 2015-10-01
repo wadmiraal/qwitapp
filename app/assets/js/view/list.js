@@ -6,17 +6,11 @@
  * @license MIT
  */
 
-define( 'app/view/days', [
-        'jquery',
-        'backbone',
-        'app/collection/days',
-        'app/view/day'
-    ], function( $, Backbone, DayCollection, DayView ) {
+define([ 'jquery', 'backbone', 'app/collection/days' ], function( $, Backbone, DayCollection ) {
     'use strict';
 
-    var DaysView = Backbone.View.extend({
-        id: 'list',
-        tpl: _.template( $( '#list-tpl' ).html() ),
+    var ListView = Backbone.View.extend({
+        tpl: _.template( $( '#day-tpl' ).html() ),
         initialize: function() {
             if ( !this.collection ) {
                 this.collection = new DayCollection();
@@ -33,9 +27,18 @@ define( 'app/view/days', [
                 });
         },
         render: function() {
+            this.$el.empty();
+            var content = '',
+                that = this;
 
+            this.collection.each( function( day ) {
+                // We put the latest ones first.
+                content = that.tpl( day.toJSON() ) + content;
+            });
+
+            this.$el.html( content );
         }
     });
 
-    return DaysView;
+    return ListView;
 });

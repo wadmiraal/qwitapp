@@ -11,45 +11,45 @@ define( 'app/app', [
     'app/router/router',
     'app/model/day',
     'app/collection/days',
-    'app/view/days',
-    'app/view/day'
-], function( Backbone, Router, DayModel, DayCollection, DaysView, DayView ) {
+    'app/view/list'
+], function( Backbone, Router, DayModel, DayCollection, ListView ) {
     'use strict';
 
     return {
         initialize: function() {
-            var contentWrapper = $('#page-content > .page-content-wrapper');
-
-            var router = new Router();
+            var router = new Router(),
+                listWrapper = $( '#list' ),
+                days = new DayCollection();
             
-            var bookCollection = new DayCollection();
-            bookCollection.fetch();
+            days.fetch();
 
             router.on( 'route:home', function() {
-                // Get the books view and pass it the collection.
-                var booksView = new DaysView({ collection: bookCollection });
-
-                // Render and append to the DOM.
-                booksView.render();
-                contentWrapper.html( booksView.$el );
+                var listView = new ListView({ collection: days });
+                listView.render();
+                listWrapper.html( listView.$el );
             });
 
-            router.on( 'route:book', function( id ) {
-                // Try getting the book from the collection first.
-                var book = bookCollection.get(id);
+            router.on( 'route:day-add', function( good ) {
+                days.create({ good: !! parseInt( good ), date: '1' });
+                router.navigate( 'home', true );
+            });
+
+            router.on( 'route:day', function( id ) {
+                // Try getting the day from the collection first.
+                var day = days.get(id);
 
                 // If it's not set, create it.
-                if ( !book ) {
-                    book = new DayModel({ id: id });
-                    book.fetch();
+                if ( !day ) {
+                    day = new DayModel({ id: id });
+                    day.fetch();
                 }
 
                 // Initiate the view.
-                var bookView = new DayView({ model: book });
+                var dayView = new DayView({ model: day });
 
                 // Render it and append to the DOM.
-                bookView.render();
-                contentWrapper.html( bookView.$el );
+                dayView.render();
+                contentWrapper.html( dayView.$el );
             });
 
             Backbone.history.start();

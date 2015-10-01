@@ -6,14 +6,13 @@
  * @license MIT
  */
 
-define( 'app/router/router', [
-    'backbone'
-], function( Backbone ) {
+define([ 'backbone' ], function( Backbone ) {
     'use strict';
 
     var Router = Backbone.Router.extend({
         routes: {
             '': 'home',
+            'new-day/:good': 'day-add',
             'days': 'days',
             'day/:id': 'day',
         }
