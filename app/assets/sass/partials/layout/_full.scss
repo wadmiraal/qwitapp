@@ -27,6 +27,7 @@
 
   text-align: center;
   text-decoration: none;
+  color: inherit;
 }
 
 .app__header__button-row__button__image {
@@ -38,10 +39,6 @@
 
   font-family: $font-stack;
   font-size: 1.2em;
-}
-
-.app__body__list {
-  text-align: center;
 }
 
 .app__body__statistics {
@@ -68,4 +65,10 @@
 
 .app__body__list {
   margin-top: 2em;
+
+  text-align: center;
+
+  a {
+    text-decoration: none;
+  }
 }

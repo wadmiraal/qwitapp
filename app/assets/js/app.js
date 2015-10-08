@@ -12,8 +12,9 @@ define( 'app/app', [
     'app/model/day',
     'app/collection/days',
     'app/view/list',
-    'app/view/stats'
-], function( Backbone, Router, DayModel, DayCollection, ListView, StatsView ) {
+    'app/view/stats',
+    'app/view/edit'
+], function( Backbone, Router, DayModel, DayCollection, ListView, StatsView, EditView ) {
     'use strict';
 
     return {
@@ -21,6 +22,7 @@ define( 'app/app', [
             var router = new Router(),
                 listWrapper = $( '#list' ),
                 statsWrapper = $( '#stats' ),
+                modalWrapper = $( '#modal' ),
                 days = new DayCollection();
             
             days.fetch();
@@ -41,21 +43,10 @@ define( 'app/app', [
             });
 
             router.on( 'route:day', function( id ) {
-                // Try getting the day from the collection first.
-                var day = days.get(id);
-
-                // If it's not set, create it.
-                if ( !day ) {
-                    day = new DayModel({ id: id });
-                    day.fetch();
-                }
-
-                // Initiate the view.
-                var dayView = new DayView({ model: day });
-
-                // Render it and append to the DOM.
-                dayView.render();
-                contentWrapper.html( dayView.$el );
+                var day = days.get( id ),
+                    editView = new EditView({ model: day, router: router });
+                editView.render();
+                modalWrapper.html( editView.$el );
             });
 
             Backbone.history.start();
