@@ -20,10 +20,10 @@ define([ 'app/model/day' ], function( DayModel ) {
         describe( 'when instantiated', function() {
             it( 'should exhibit attributes', function() {
                 var day = new DayModel({
-                    good: true,
+                    type: 'good',
                     date: '2015-09-20'
                 });
-                expect( day.get( 'good' ) ).toEqual( true );
+                expect( day.get( 'type' ) ).toEqual( 'good' );
                 expect( day.get( 'date' ) ).toEqual( '2015-09-20' );
             });
         });

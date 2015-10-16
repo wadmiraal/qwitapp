@@ -44,8 +44,8 @@
             <div class="app__body__list" id="list"></div>
         </div>
 
-        <div class="app__modal">
-            <div class="app__modal__content" id="modal"></div>
+        <div class="app__modal" id="modal">
+            <div class="app__modal__content" id="modal-content"></div>
 
             <div class="app__modal__overlay" id="overlay"></div>
         </div>
@@ -70,18 +70,20 @@
         <a href="#day/<%= id %>" class="app__body__list__day day">
             <img
                 class="app__body__list__day__image day__image"
-                src="assets/images/small-<% if ( good ) { %>smilie<% } else { %>sad<% } %>.png"
-                title="<% if ( good ) { %>Good job!<% } else { %>It happens.<% } %>" />
+                src="assets/images/small-<% if ( type === 'good' ) { %>smilie<% } else { %>sad<% } %>.png"
+                title="<% if ( type === 'good' ) { %>Good job!<% } else { %>It happens.<% } %>" />
         </a>
     </script>
 
     <script type="text/template" id="edit-tpl">
-        <h4>Edit <em><%= date %></em></h4>
+        <div class="edit">
+            <h4>Edit <em><%= date %></em></h4>
 
-        <button class="edit-good">Good</button>
-        <button class="edit-bad">Bad</button>
-        <button class="delete">Delete</button>
-        <a href="#">Cancel</a>
+            <a class="edit__button" id="update-good">Good</a>
+            <a class="edit__button" id="update-bad">Bad</a>
+            <a class="edit__button" id="delete">Delete</a>
+            <a href="#">Cancel</a>
+        </div>
     </script>
 
     <script data-main="assets/js/main" src="assets/components/requirejs/require.js"></script>

@@ -23,7 +23,7 @@ define([ 'app/collection/days' ], function( DayCollection ) {
                 var days = new DayCollection(),
                     list = [ 1, 1, 1, 0, 1, 0 ];
                 for ( var i = 0, len = list.length; i < len; ++i ) {
-                    days.create({ good: !!list[ i ] });
+                    days.create({ type: !!list[ i ] ? 'good' : 'bad' });
                 }
                 expect( days.totalGood() ).toEqual( 4 );
             });
@@ -34,7 +34,7 @@ define([ 'app/collection/days' ], function( DayCollection ) {
                 var days = new DayCollection(),
                     list = [ 1, 0, 1, 0, 0, 1, 1 ];
                 for ( var i = 0, len = list.length; i < len; ++i ) {
-                    days.create({ good: !!list[ i ] });
+                    days.create({ type: !!list[ i ] ? 'good' : 'bad' });
                 }
                 expect( days.totalBad() ).toEqual( 3 );
             });
@@ -45,7 +45,7 @@ define([ 'app/collection/days' ], function( DayCollection ) {
                 var days = new DayCollection(),
                     list = [ 1, 0, 1, 1, 1, 0, 0, 1, 1 ];
                 for ( var i = 0, len = list.length; i < len; ++i ) {
-                    days.create({ good: !!list[ i ] });
+                    days.create({ type: !!list[ i ] ? 'good' : 'bad' });
                 }
                 expect( days.longestStreak() ).toEqual( 3 );
             });

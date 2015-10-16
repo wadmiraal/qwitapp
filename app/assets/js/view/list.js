@@ -22,6 +22,9 @@ define([ 'jquery', 'backbone', 'app/collection/days' ], function( $, Backbone, D
                 .bind( 'add', function() {
                     that.render();
                 })
+                .bind( 'update', function() {
+                    that.render();
+                })
                 .bind( 'remove', function() {
                     that.render();
                 });
@@ -33,7 +36,9 @@ define([ 'jquery', 'backbone', 'app/collection/days' ], function( $, Backbone, D
 
             this.collection.each( function( day ) {
                 // We put the latest ones first.
-                content = that.tpl( day.toJSON() ) + content;
+                if ( day.get( 'id') ) {
+                    content = that.tpl( day.toJSON() ) + content;
+                }
             });
 
             this.$el.html( content );

@@ -1,0 +1,47 @@
+/**
+ * @file
+ * Modal styles.
+ */
+
+.app__modal {
+  visibility: hidden;
+}
+
+.app__modal__overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  background-color: #000;
+
+  opacity: 0;
+  z-index: 100;
+  transition: opacity .5s;
+}
+
+.app__modal__content {
+  width: 400px;
+  padding: 1em;
+
+  position: fixed;
+  top: 50px;
+  left: auto;
+  right: auto;
+
+  border: 5px solid #333;
+  background-color: #fff;
+
+  z-index: 200;
+
+}
+
+.app__modal.visible {
+  visibility: visible;
+
+  .app__modal__overlay {
+    opacity: 0.6;
+  }
+}
+

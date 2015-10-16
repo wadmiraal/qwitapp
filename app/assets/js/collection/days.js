@@ -15,17 +15,17 @@ define([ 'backbone', 'localstorage', 'app/model/day' ], function( Backbone, a, D
         model: DayModel,
         localStorage: new Backbone.LocalStorage( 'qwit-days' ),
         totalGood: function() {
-            return this.where({ good: true }).length;
+            return this.where({ type: 'good' }).length;
         },
         totalBad: function() {
-            return this.where({ good: false }).length;
+            return this.where({ type: 'bad' }).length;
         },
         longestStreak: function() {
             var count = 0,
                 max = 0;
 
             this.each( function( day ) {
-                if ( day.get( 'good' ) ) {
+                if ( day.get( 'type' ) === 'good' ) {
                     count++;
                 } else {
                     max = Math.max( max, count );

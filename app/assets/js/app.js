@@ -22,7 +22,8 @@ define( 'app/app', [
             var router = new Router(),
                 listWrapper = $( '#list' ),
                 statsWrapper = $( '#stats' ),
-                modalWrapper = $( '#modal' ),
+                modal = $( '#modal' ),
+                modalWrapper = $( '#modal-content' ),
                 days = new DayCollection();
             
             days.fetch();
@@ -35,10 +36,12 @@ define( 'app/app', [
                 var statsView = new StatsView({ collection: days });
                 statsView.render();
                 statsWrapper.html( statsView.$el );
+
+                modal.removeClass( 'visible' );
             });
 
             router.on( 'route:day-add', function( good ) {
-                days.create({ good: !! parseInt( good ), date: '1' });
+                days.create({ type: !!parseInt( good ) ? 'good' : 'bad', date: '1' });
                 router.navigate( '', true );
             });
 
@@ -47,6 +50,7 @@ define( 'app/app', [
                     editView = new EditView({ model: day, router: router });
                 editView.render();
                 modalWrapper.html( editView.$el );
+                modal.addClass( 'visible' );
             });
 
             Backbone.history.start();
