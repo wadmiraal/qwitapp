@@ -16,16 +16,16 @@ define([ 'jquery', 'backbone', 'app/model/day' ], function( $, Backbone, DayMode
         },
         events: {
             'click #update-good': 'updateDayGood',
-            'click #update-bad': 'updateDayGood',
+            'click #update-bad': 'updateDayBad',
             'click #delete': 'deleteDay'
         },
         updateDayGood: function() {
-            this.model.set({ good: true });
+            this.model.set({ type: 'good' });
             this.model.save();
             this.router.navigate( '', true );
         },
         updateDayBad: function() {
-            this.model.set({ good: false });
+            this.model.set({ type: 'bad' });
             this.model.save();
             this.router.navigate( '', true );
         },
