@@ -41,7 +41,10 @@ define( 'app/app', [
             });
 
             router.on( 'route:day-add', function( good ) {
-                days.create({ type: !!parseInt( good ) ? 'good' : 'bad', date: '1' });
+                days.create({
+                    type: !!parseInt( good ) ? 'good' : 'bad',
+                    date: new Date().toLocaleDateString()
+                });
                 router.navigate( '', true );
             });
 
