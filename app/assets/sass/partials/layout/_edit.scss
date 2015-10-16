@@ -1,0 +1,42 @@
+/**
+ * @file
+ * Edition form styles.
+ */
+
+.edit {
+
+
+}
+
+.edit__button {
+  height: 40px;
+  width: 40px;
+  padding: .5em;
+  display: inline-block;
+  margin: 0 .5em;
+
+  text-indent: -9999px;
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 100%;
+
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.edit__cancel {
+  display: inline-block;
+  margin: 0 .5em;
+  height: 40px;
+
+  overflow: hidden;
+}
+
+#update-good {
+  background-image: url(../images/big-smilie.png);
+}
+
+#update-bad {
+  background-image: url(../images/big-sad.png);
+}

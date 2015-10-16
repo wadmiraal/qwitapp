@@ -30,11 +30,18 @@
   left: auto;
   right: auto;
 
-  border: 5px solid #333;
   background-color: #fff;
+  @include box-shadow(0 0 5px #000);
+  @include border-radius(2px);
 
   z-index: 200;
 
+  h4 {
+    padding-bottom: .5em;
+    margin-top: 0;
+
+    border-bottom: 1px solid $body-color;
+  }
 }
 
 .app__modal.visible {
