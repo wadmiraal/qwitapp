@@ -33,7 +33,7 @@ define([ 'backbone', 'localstorage', 'app/model/day' ], function( Backbone, a, D
                 }
             });
 
-            return max;
+            return Math.max( max, count );
         }
     });
 
