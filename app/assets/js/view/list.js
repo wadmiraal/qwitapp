@@ -11,6 +11,9 @@ define([ 'jquery', 'backbone', 'app/collection/days' ], function( $, Backbone, D
 
     var ListView = Backbone.View.extend({
         tpl: _.template( $( '#day-tpl' ).html() ),
+        events: {
+            'click .day': 'triggerEditDay'
+        },
         initialize: function() {
             if ( !this.collection ) {
                 this.collection = new DayCollection();
@@ -19,13 +22,7 @@ define([ 'jquery', 'backbone', 'app/collection/days' ], function( $, Backbone, D
 
             var that = this;
             this.collection
-                .bind( 'add', function() {
-                    that.render();
-                })
-                .bind( 'update', function() {
-                    that.render();
-                })
-                .bind( 'remove', function() {
+                .on( 'add change remove', function() {
                     that.render();
                 });
         },
@@ -34,14 +31,23 @@ define([ 'jquery', 'backbone', 'app/collection/days' ], function( $, Backbone, D
             var content = '',
                 that = this;
 
-            this.collection.each( function( day ) {
-                // We put the latest ones first.
-                if ( day.get( 'id') ) {
-                    content = that.tpl( day.toJSON() ) + content;
-                }
+            this.collection.each( function( day, i ) {
+                // We put the latest ones first. When the "add" event is 
+                // triggered, we don't have an ID yet, as the element is not yet
+                // stored in localStorage (bug?). Rely on the position of the
+                // element inside the collection instead. This works just as
+                // well in most situations, and it gets re-rendered the whole
+                // time anyway.
+                content = that.tpl( _.extend( { i: i }, day.toJSON() ) ) + content;
             });
 
             this.$el.html( content );
+
+            return this;
+        },
+        triggerEditDay: function( e ) {
+            var day = this.collection.at( e.currentTarget.id.replace( 'day-', '' ) );
+            this.trigger( 'day:edit', day );
         }
     });
 

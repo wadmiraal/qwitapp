@@ -15,12 +15,14 @@
     <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
-    <div class="app">
+    <div id="app"></div>
+
+    <script type="text/template" id="app-tpl">
         <div class="app__header">
             <h1 id="app-title">So, how did you do today?</h1>
 
             <div class="app__header__button-row">
-                <a href="#new-day/1" id="success-button" class="app__header__button-row__button button">
+                <a id="success-button" class="app__header__button-row__button button">
                     <img class="app__header__button-row__button__image button__image" src="assets/images/big-smilie.png" />
 
                     <span class="app__header__button-row__button__label button__label">
@@ -28,7 +30,7 @@
                     </span>
                 </a>
 
-                <a href="#new-day/0" id="failure-button" class="app__header__button-row__button button">
+                <a id="failure-button" class="app__header__button-row__button button">
                     <img class="app__header__button-row__button__image button__image" src="assets/images/big-sad.png" />
 
                     <span class="app__header__button-row__button__label button__label">
@@ -38,18 +40,12 @@
             </div>
         </div>
 
-    	<div class="app__body">
+        <div class="app__body">
             <div class="app__body__statistics" id="stats"></div>
 
             <div class="app__body__list" id="list"></div>
         </div>
-
-        <div class="app__modal" id="modal">
-            <div class="app__modal__content" id="modal-content"></div>
-
-            <div class="app__modal__overlay" id="overlay"></div>
-        </div>
-    </div>
+    </script>
 
     <script type="text/template" id="stats-tpl">
         <h3>So far, you...</h3>
@@ -67,7 +63,7 @@
     </script>
 
     <script type="text/template" id="day-tpl">
-        <a href="#day/<%= id %>" class="app__body__list__day day">
+        <a class="app__body__list__day day"  id="day-<%= i %>">
             <img
                 class="app__body__list__day__image day__image"
                 src="assets/images/small-<% if ( type === 'good' ) { %>smilie<% } else { %>sad<% } %>.png"
@@ -82,7 +78,7 @@
             <a class="edit__button" id="update-good">Good</a>
             <a class="edit__button" id="update-bad">Bad</a>
             <a class="edit__button" id="delete">Delete</a>
-            <a class="edit__cancel" href="#">Cancel</a>
+            <a class="edit__cancel" id="cancel">Cancel</a>
         </div>
     </script>
 

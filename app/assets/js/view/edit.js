@@ -11,27 +11,28 @@ define([ 'jquery', 'backbone', 'app/model/day' ], function( $, Backbone, DayMode
 
     var EditView = Backbone.View.extend({
         tpl: _.template( $( '#edit-tpl' ).html() ),
-        initialize: function( options ) {
-            this.router = options.router;
-        },
         events: {
             'click #update-good': 'updateDayGood',
             'click #update-bad': 'updateDayBad',
-            'click #delete': 'deleteDay'
+            'click #delete': 'deleteDay',
+            'click #cancel': 'cancel'
         },
         updateDayGood: function() {
             this.model.set({ type: 'good' });
             this.model.save();
-            this.router.navigate( '', true );
+            this.remove();
         },
         updateDayBad: function() {
             this.model.set({ type: 'bad' });
             this.model.save();
-            this.router.navigate( '', true );
+            this.remove();
         },
         deleteDay: function() {
             this.model.destroy();
-            this.router.navigate( '', true );
+            this.remove();
+        },
+        cancel: function() {
+            this.remove();
         },
         render: function() {
             this.$el.empty();
