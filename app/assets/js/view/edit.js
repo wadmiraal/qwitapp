@@ -10,12 +10,13 @@ define([ 'jquery', 'backbone', 'app/model/day' ], function( $, Backbone, DayMode
     'use strict';
 
     var EditView = Backbone.View.extend({
+        className: 'app__edit',
         tpl: _.template( $( '#edit-tpl' ).html() ),
         events: {
-            'click #update-good': 'updateDayGood',
-            'click #update-bad': 'updateDayBad',
-            'click #delete': 'deleteDay',
-            'click #cancel': 'cancel'
+            'click .app__edit__button--update-good': 'updateDayGood',
+            'click .app__edit__button--update-bad': 'updateDayBad',
+            'click .app__edit__button--delete': 'deleteDay',
+            'click .app__edit__cancel': 'cancel'
         },
         updateDayGood: function() {
             this.model.set({ type: 'good' });
