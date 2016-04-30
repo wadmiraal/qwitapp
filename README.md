@@ -10,7 +10,7 @@ You can find more information on the [website]().
 Install
 -------
 
-Just visit [this link]() with a modern browser. That's it. It will load all assets and store them locally. Your data is stored directly in the browser, and it works offline.
+Just visit [this link](http://wadmiraal.github.io/qwitapp/app/index.html) with a modern browser. That's it. It will load all assets and store them locally. Your data is stored directly in the browser, and it works offline.
 
 Developers
 ----------
