@@ -1,0 +1,26 @@
+CACHE MANIFEST
+# 2016-04-30:v1
+
+index.html
+
+assets/css/styles.css
+
+assets/images/big-sad.png
+assets/images/big-smilie.png
+assets/images/dust-bin.png
+assets/images/small-sad.png
+assets/images/small-smilie.png
+
+assets/js/collection/days.js
+assets/js/model/day.js
+assets/js/view/app.js
+assets/js/view/edit.js
+assets/js/view/list.js
+assets/js/view/stats.js
+assets/js/app.js
+assets/js/main.js
+
+assets/components/jquery/dist/jquery.js
+assets/components/underscore/underscore.js
+assets/components/backbone/backbone.js
+assets/components/backbone.localStorage/backbone.localStorage.js
