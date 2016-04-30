@@ -1,0 +1,15 @@
+{
+    "name": "qwit",
+    "version": "0.0.0",
+    "dependencies": {
+        "jquery": "~2.1.4",
+        "underscore": "~1.8.3",
+        "backbone": "~1.2.3",
+        "requirejs": "~2.1.20",
+        "normalize.css": "~3.0.2",
+        "backbone.localStorage": "*"
+    },
+    "devDependencies": {
+      "jasmine": "~2.3.0"
+    }
+}

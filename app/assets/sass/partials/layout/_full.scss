@@ -1,0 +1,76 @@
+/**
+ * @file
+ * Layout styles.
+ */
+
+.app {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.app__header {
+
+  h1 {
+    text-align: center;
+  }
+}
+
+.app__header__button-row {
+  overflow: hidden;
+}
+
+.app__header__button-row__button {
+  display: block;
+  float: left;
+  width: 46%;
+  margin: 2%;
+
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+
+  cursor: pointer;
+}
+
+.app__header__button-row__button__image {
+  max-width: 100%;
+}
+
+.app__header__button-row__button__label {
+  display: block;
+
+  font-family: $font-stack;
+  font-size: 1.2em;
+}
+
+.app__body__statistics {
+  font-weight: bold;
+
+  overflow: hidden;
+
+  h3 {
+    text-align: center;
+  }
+
+  dt {
+    float: left;
+    clear: left;
+    margin-bottom: .5em;
+  }
+
+  dd {
+    float: left;
+    margin-left: .5em;
+    margin-bottom: .5em;
+  }
+}
+
+.app__body__list {
+  margin-top: 2em;
+
+  text-align: center;
+
+  a {
+    text-decoration: none;
+  }
+}

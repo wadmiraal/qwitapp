@@ -1,0 +1,34 @@
+{
+  "name": "qwit",
+  "version": "0.0.0",
+  "description": "Qwit :: Helps you quit",
+  "main": "app/js/main.js",
+  "directories": {
+    "test": "test",
+    "app": "app"
+  },
+  "dependencies": {
+    "gulp": "^3.9.0"
+  },
+  "devDependencies": {
+    "gulp-minify-css": "~0.3.11",
+    "gulp-concat": "~2.4.1",
+    "gulp-minify-html": "~0.1.8",
+    "gulp-uglify": "~1.0.1",
+    "gulp-sass": "~2.0.4",
+    "testem": "~0.9.6",
+    "bower": "~1.5.3"
+  },
+  "scripts": {
+    "test": "testem"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wadmiraal/qwitapp.git"
+  },
+  "author": "Wouter Admiraal <wad@wadmiraal.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wadmiraal/qwitapp/issues"
+  }
+}

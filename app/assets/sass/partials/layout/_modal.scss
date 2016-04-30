@@ -1,0 +1,54 @@
+/**
+ * @file
+ * Modal styles.
+ */
+
+.app__modal {
+  visibility: hidden;
+}
+
+.app__modal__overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  background-color: #000;
+
+  opacity: 0;
+  z-index: 100;
+  transition: opacity .5s;
+}
+
+.app__modal__content {
+  width: 400px;
+  padding: 1em;
+
+  position: fixed;
+  top: 50px;
+  left: auto;
+  right: auto;
+
+  background-color: #fff;
+  @include box-shadow(0 0 5px #000);
+  @include border-radius(2px);
+
+  z-index: 200;
+
+  h4 {
+    padding-bottom: .5em;
+    margin-top: 0;
+
+    border-bottom: 1px solid $body-color;
+  }
+}
+
+.app__modal.visible {
+  visibility: visible;
+
+  .app__modal__overlay {
+    opacity: 0.6;
+  }
+}
+
