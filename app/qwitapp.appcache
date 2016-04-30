@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# 2016-04-30:v1
+# 2016-04-30:v2
 
 index.html
 
@@ -24,3 +24,4 @@ assets/components/jquery/dist/jquery.js
 assets/components/underscore/underscore.js
 assets/components/backbone/backbone.js
 assets/components/backbone.localStorage/backbone.localStorage.js
+assets/components/requirejs/require.js
