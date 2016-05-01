@@ -17,9 +17,7 @@ define( 'app/app', [
 
     return {
         initialize: function() {
-            var modal = $( '#modal' ),
-                modalWrapper = $( '#modal-content' ),
-                days = new DayCollection();
+            var days = new DayCollection();
 
             // Fetch data before we render the application. When fetching, an
             // "add" event is triggered for each loaded item, which slows the
