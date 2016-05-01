@@ -8,5 +8,5 @@
         localstorage: 'components/backbone.localStorage/backbone.localStorage',
         app: 'js/',
     },
-    out: 'build/app.min.js'
+    out: 'build/all.min.js'
 })
