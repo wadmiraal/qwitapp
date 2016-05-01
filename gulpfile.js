@@ -29,7 +29,7 @@ gulp.task( 'css-min', function() {
   gulp.src([ './app/assets/css/**/*.css', './app/assets/css/*.css' ])
     .pipe( concat( 'all.min.css' ) )
     .pipe( minifyCSS() )
-    .pipe( gulp.dest( './build' ) );
+    .pipe( gulp.dest( './build/css' ) );
 });
 
 // Use r.js to combine all JS files.
