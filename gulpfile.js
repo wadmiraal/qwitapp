@@ -10,7 +10,8 @@ var gulp       = require( 'gulp' ),
     concat     = require( 'gulp-concat' ),
     minifyCSS  = require( 'gulp-minify-css' ),
     uglify     = require( 'gulp-uglify' ),
-    minifyHTML = require( 'gulp-minify-html' );
+    minifyHTML = require( 'gulp-minify-html' ),
+    shell      = require( 'gulp-shell' );
 
 // Compile the SCSS files using libSass.
 gulp.task( 'sass', function() {
@@ -31,12 +32,17 @@ gulp.task( 'css-min', function() {
     .pipe( gulp.dest( './build/css' ) );
 });
 
+// Use r.js to combine all JS files.
+gulp.task( 'rjs', shell.task([
+  './node_modules/.bin/r.js -o build.js'
+]) );
+
 // Watch files for changes.
 gulp.task( 'watch', function() {
   gulp.watch( [ './app/assets/sass/*.scss', './app/assets/sass/**/*.scss' ], [ 'sass' ] );
+  gulp.watch( [ './app/assets/js/*.js', './app/assets/js/**/*.js' ], [ 'rjs' ] );
 });
 
-
 // Default tasks.
-gulp.task( 'default', [ 'sass', 'css-min' ] );
+gulp.task( 'default', [ 'sass', 'css-min', 'rjs' ] );
 
