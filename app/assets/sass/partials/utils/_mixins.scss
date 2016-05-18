@@ -18,3 +18,11 @@
   -o-border-radius: $radius;
   border-radius: $radius;
 }
+
+@mixin background-size($size) {
+  -webkit-background-size: $size;
+  -moz-background-size: $size;
+  -ms-background-size: $size;
+  -o-background-size: $size;
+  background-size: $size;  
+}

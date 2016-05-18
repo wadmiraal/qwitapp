@@ -23,7 +23,7 @@
 
             <div class="app__header__button-row">
                 <a id="success-button" class="app__header__button-row__button button">
-                    <img class="app__header__button-row__button__image button__image" src="assets/images/big-smilie.png" />
+                    <span class="app__header__button-row__button__image button__image app__header__button-row__button__image--smilie"></span>
 
                     <span class="app__header__button-row__button__label button__label">
                         I did great!
@@ -31,7 +31,7 @@
                 </a>
 
                 <a id="failure-button" class="app__header__button-row__button button">
-                    <img class="app__header__button-row__button__image button__image" src="assets/images/big-sad.png" />
+                    <span class="app__header__button-row__button__image button__image app__header__button-row__button__image--sad"></span>
 
                     <span class="app__header__button-row__button__label button__label">
                         I had a bad day...
@@ -64,10 +64,9 @@
 
     <script type="text/template" id="day-tpl">
         <a class="app__body__list__day day"  id="day-<%= i %>">
-            <img
-                class="app__body__list__day__image day__image"
-                src="assets/images/small-<% if ( type === 'good' ) { %>smilie<% } else { %>sad<% } %>.png"
-                title="<% if ( type === 'good' ) { %>Good job!<% } else { %>It happens.<% } %>" />
+            <span
+                class="app__body__list__day__image day__image app__body__list__day__image--<% if ( type === 'good' ) { %>smilie<% } else { %>sad<% } %>"
+                title="<% if ( type === 'good' ) { %>Good job!<% } else { %>It happens.<% } %>"></span>
         </a>
     </script>
 

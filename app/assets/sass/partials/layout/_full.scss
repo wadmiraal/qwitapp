@@ -33,7 +33,22 @@
 }
 
 .app__header__button-row__button__image {
+  display: inline-block;
+  width: 122px;
   max-width: 100%;
+  height: 122px; // @todo!!
+
+  background-repeat: no-repeat;
+  background-position: center top;
+  @include background-size(cover);
+}
+
+.app__header__button-row__button__image--smilie {
+  background-image: url(../images/big-smilie.png);
+}
+
+.app__header__button-row__button__image--sad {
+  background-image: url(../images/big-sad.png);
 }
 
 .app__header__button-row__button__label {
@@ -73,4 +88,25 @@
   a {
     text-decoration: none;
   }
+}
+
+.app__body__list__day {
+  cursor: pointer;
+}
+
+.app__body__list__day__image {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.app__body__list__day__image--smilie {
+  background-image: url(../images/small-smilie.png);
+}
+
+.app__body__list__day__image--sad {
+  background-image: url(../images/small-sad.png);
 }
