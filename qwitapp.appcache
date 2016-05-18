@@ -1,14 +1,14 @@
 CACHE MANIFEST
-# 2016-05-18:v1
+# 2016-05-18:v2
 
 index.html
 
-build/css/all.min.css
+dist/css/all.min.css
 
-build/images/big-sad.png
-build/images/big-smilie.png
-build/images/dust-bin.png
-build/images/small-sad.png
-build/images/small-smilie.png
+dist/images/big-sad.png
+dist/images/big-smilie.png
+dist/images/dust-bin.png
+dist/images/small-sad.png
+dist/images/small-smilie.png
 
-build/js/all.min.js
+dist/js/all.min.js
