@@ -1,12 +1,7 @@
 ({
     name: 'js/main',
     baseUrl: 'app/assets/',
-    paths: {
-        jquery: 'components/jquery/dist/jquery',
-        underscore: 'components/underscore/underscore',
-        backbone: 'components/backbone/backbone',
-        localstorage: 'components/backbone.localStorage/backbone.localStorage',
-        app: 'js/',
-    },
+    include: [ 'components/requirejs/require' ],
+    mainConfigFile: 'app/assets/js/main.js',
     out: 'build/js/all.min.js'
 })
