@@ -1,9 +1,0 @@
-{
-    "framework": "jasmine",
-    "launch_in_dev": [ "firefox" ],
-    "test_page": "test/runner.html",
-    "src_files": [
-        "app/assets/js/**/*.js",
-        "test/specs/**/*.js"
-    ]
-}
