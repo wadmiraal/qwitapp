@@ -40,6 +40,12 @@ gulp.task( 'rjs', shell.task([
   './node_modules/.bin/r.js -o build.js'
 ]) );
 
+// Copy all files over.
+gulp.task( 'images', function() {
+  gulp.src( './app/assets/images/*' )
+    .pipe( gulp.dest('./build/images' ) );
+});
+
 // Watch files for changes.
 gulp.task( 'watch', function() {
   gulp.watch( [ './app/assets/sass/*.scss', './app/assets/sass/**/*.scss' ], [ 'sass' ] );
@@ -47,5 +53,5 @@ gulp.task( 'watch', function() {
 });
 
 // Default tasks.
-gulp.task( 'default', [ 'sass', 'css-min', 'rjs' ] );
+gulp.task( 'default', [ 'sass', 'css-min', 'images', 'rjs' ] );
 
