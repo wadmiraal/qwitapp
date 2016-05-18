@@ -26,8 +26,11 @@ gulp.task( 'sass', function() {
 
 // Combine all CSS files and minify.
 gulp.task( 'css-min', function() {
-  gulp.src([ './app/assets/css/**/*.css', './app/assets/css/*.css' ])
-    .pipe( concat( 'all.min.css' ) )
+  gulp.src([
+    './app/assets/components/normalize.css/**/*.css',
+    './app/assets/components/normalize.css/*.css',
+    './app/assets/css/*.css'
+  ]).pipe( concat( 'all.min.css' ) )
     .pipe( minifyCSS() )
     .pipe( gulp.dest( './build/css' ) );
 });
